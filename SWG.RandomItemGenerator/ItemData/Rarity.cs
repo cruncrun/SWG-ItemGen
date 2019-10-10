@@ -4,9 +4,10 @@ using System.Text;
 
 namespace SWG.RandomItemGenerator.ItemData
 {
-    public class BaseItemData
+    public enum Rarity
     {
-        public ItemClass ItemClass { get; set; }
-        public Rarity Rarity { get; set; }
+        Common,
+        Uncommon, 
+        Rare
     }
 }

@@ -8,4 +8,9 @@
     <PackageReference Include="EntityFramework" Version="6.2.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Enum\" />
+    <Folder Include="Interface\" />
+  </ItemGroup>
+
 </Project>

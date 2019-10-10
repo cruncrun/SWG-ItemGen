@@ -4,9 +4,9 @@ using System.Text;
 
 namespace SWG.RandomItemGenerator.ItemData
 {
-    public class BaseItemData
+    public enum ItemClass
     {
-        public ItemClass ItemClass { get; set; }
-        public Rarity Rarity { get; set; }
+        Equipable,
+        QuestItem
     }
 }
