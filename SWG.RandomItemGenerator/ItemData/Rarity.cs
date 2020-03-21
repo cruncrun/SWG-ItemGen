@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SWG.RandomItemGenerator.ItemData
+namespace SWG.RandomDataGenerator.ItemData
 {
     public enum Rarity
     {

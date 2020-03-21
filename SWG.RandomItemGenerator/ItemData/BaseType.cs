@@ -4,9 +4,8 @@ using System.Text;
 
 namespace SWG.RandomDataGenerator.ItemData
 {
-    public enum UsageType
+    public enum BaseType
     {
-        Equipable,
-        QuestItem
+
     }
 }

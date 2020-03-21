@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SWG.RandomItemGenerator.ItemData.ItemAffixes
+namespace SWG.RandomDataGenerator.ItemData.ItemAffixes
 {
     public class SecondaryPrefix : IAffix
     {
