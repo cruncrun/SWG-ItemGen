@@ -8,9 +8,21 @@ namespace SWG.RandomDataGenerator
 {
     public class ItemFactory
     {
-        public IItem GetItem(ILootItem lootItem, IItemGenerationParameters generationParameters)
+        public IItem GetItem(ILootItem lootItem)
         {
             throw new NotImplementedException();
+        }
+
+        public IEnumerable<IItem> GetItems(IEnumerable<ILootItem> lootItems)
+        {
+            var droppedItems = new List<IItem>();
+
+            foreach (var lootItem in lootItems)
+            {
+                droppedItems.Add(GetItem(lootItem));
+            }
+
+            return droppedItems;
         }
     }
 }

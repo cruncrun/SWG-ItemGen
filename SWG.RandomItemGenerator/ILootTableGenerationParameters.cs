@@ -1,6 +1,6 @@
 ﻿namespace SWG.RandomDataGenerator
 {
-    public interface IItemGenerationParameters
+    public interface ILootTableGenerationParameters
     {
     }
 }

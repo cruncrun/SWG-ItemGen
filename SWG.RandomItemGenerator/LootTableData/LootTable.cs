@@ -6,7 +6,7 @@ namespace SWG.RandomDataGenerator.LootTableData
 {
     public class LootTable : ILootTable
     {
-        public IItemGenerationParameters ItemGenerationParameters { get; set; }
+        public ILootTableGenerationParameters ItemGenerationParameters { get; set; }
         public IEnumerable<ILootGroup> LootGroups { get; set; }
     }
 }

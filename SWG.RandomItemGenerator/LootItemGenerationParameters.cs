@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SWG.RandomDataGenerator
 {
-    public class ItemGenerationParameters : IItemGenerationParameters
+    class LootItemGenerationParameters : ILootItemGenerationParameters
     {
     }
 }

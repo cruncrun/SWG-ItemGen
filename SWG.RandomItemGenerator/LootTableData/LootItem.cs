@@ -4,11 +4,12 @@ namespace SWG.RandomDataGenerator.LootTableData
 {
     public class LootItem : ILootItem
     {
+        public ILootItemGenerationParameters GenerationParameters { get; set; }
         public int Id { get; set; }
-        public int DropProbability { get; set; }
-        public bool UniqueDrop { get; set; }
-        public bool GuaranteedDrop { get; set; }
-        public bool PossibleDrop { get; set; }
+        public int Probability { get; set; }
+        public bool IsUnique { get; set; }
+        public bool IsGuaranteed { get; set; }
+        public bool IsPossible { get; set; }
         public List<int> ItemsExcludedIfDropped { get; set; }
     }
 }

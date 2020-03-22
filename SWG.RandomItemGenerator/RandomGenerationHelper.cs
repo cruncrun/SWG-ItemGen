@@ -28,7 +28,7 @@ namespace SWG.RandomDataGenerator
 
         public static int GetSummedProbability(IEnumerable<ILootItem> items)
         {
-            return items.Sum(i => i.DropProbability);
+            return items.Sum(i => i.Probability);
         }
     }
 }
