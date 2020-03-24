@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using SWG.RandomDataGenerator.ItemData;
+﻿using SWG.RandomDataGenerator.ItemData;
 using SWG.RandomDataGenerator.ItemData.ItemAffixes;
 using Xunit;
 
-namespace SWG.RandomDataGenerator.Tests
+namespace SWG.RandomItemGenerator.Tests.ItemData
 {
     public class ItemNameTests
     {
@@ -15,25 +12,16 @@ namespace SWG.RandomDataGenerator.Tests
             // Arrange
             Affixes affixes = new Affixes
             {
-                FirstPrefix = new FirstPrefix
-                {
-                    AffixName = "Soldier's"
-                },
-                SecondaryPrefix = new SecondaryPrefix
-                {
-                    AffixName = "Steel"
-                },
-                Suffix = new Suffix
-                {
-                    AffixName = "of Brotherhood"
-                }
+                FirstPrefix = new FirstPrefix {AffixName = "Soldier's"},
+                SecondaryPrefix = new SecondaryPrefix {AffixName = "Steel"},
+                Suffix = new Suffix{AffixName = "of Brotherhood"}
             };
             
             string testName = "Soldier's Steel Dagger of Brotherhood";
-
+            
             // Act
             ItemName itemName = new ItemName("Dagger", affixes);
-
+            
             // Assert
             Assert.Equal(testName, itemName.FullItemName);            
         }
@@ -44,14 +32,8 @@ namespace SWG.RandomDataGenerator.Tests
             // Arrange
             Affixes affixes = new Affixes
             {
-                FirstPrefix = new FirstPrefix
-                {
-                    AffixName = "Soldier's"
-                },
-                SecondaryPrefix = new SecondaryPrefix
-                {
-                    AffixName = "Steel"
-                }
+                FirstPrefix = new FirstPrefix {AffixName = "Soldier's"},
+                SecondaryPrefix = new SecondaryPrefix {AffixName = "Steel"}
             };
 
             string testName = "Soldier's Steel Dagger";
@@ -69,14 +51,8 @@ namespace SWG.RandomDataGenerator.Tests
             // Arrange
             Affixes affixes = new Affixes
             {
-                FirstPrefix = new FirstPrefix
-                {
-                    AffixName = "Soldier's"
-                },                
-                Suffix = new Suffix
-                {
-                    AffixName = "of Brotherhood"
-                }
+                FirstPrefix = new FirstPrefix {AffixName = "Soldier's"},                
+                Suffix = new Suffix {AffixName = "of Brotherhood"}
             };            
 
             string testName = "Soldier's Dagger of Brotherhood";
@@ -88,22 +64,14 @@ namespace SWG.RandomDataGenerator.Tests
             Assert.Equal(testName, itemName.FullItemName);
         }
 
-        
-
         [Fact]
         public void GenerateFullItemName_SecondaryPrefixBaseNameAndSuffix()
         {
             // Arrange
             Affixes affixes = new Affixes
             {                
-                SecondaryPrefix = new SecondaryPrefix
-                {
-                    AffixName = "Steel"
-                },
-                Suffix = new Suffix
-                {
-                    AffixName = "of Brotherhood"
-                }
+                SecondaryPrefix = new SecondaryPrefix {AffixName = "Steel"},
+                Suffix = new Suffix {AffixName = "of Brotherhood"}
             };            
 
             string testName = "Steel Dagger of Brotherhood";
@@ -121,10 +89,7 @@ namespace SWG.RandomDataGenerator.Tests
             // Arrange
             Affixes affixes = new Affixes
             {
-                FirstPrefix = new FirstPrefix
-                {
-                    AffixName = "Soldier's"
-                }
+                FirstPrefix = new FirstPrefix {AffixName = "Soldier's"}
             };
 
             string testName = "Soldier's Dagger";
@@ -142,10 +107,7 @@ namespace SWG.RandomDataGenerator.Tests
             // Arrange
             Affixes affixes = new Affixes
             {                
-                SecondaryPrefix = new SecondaryPrefix
-                {
-                    AffixName = "Steel"
-                }
+                SecondaryPrefix = new SecondaryPrefix {AffixName = "Steel"}
             };
 
             string testName = "Steel Dagger";
@@ -163,10 +125,7 @@ namespace SWG.RandomDataGenerator.Tests
             // Arrange
             Affixes affixes = new Affixes
             {                
-                Suffix = new Suffix
-                {
-                    AffixName = "of Brotherhood"
-                }
+                Suffix = new Suffix {AffixName = "of Brotherhood"}
             };
 
             string testName = "Dagger of Brotherhood";

@@ -26,7 +26,7 @@ namespace SWG.RandomDataGenerator
             return droppedLoot.Any() ? droppedLoot : Enumerable.Empty<IItem>();
         }
 
-        private IEnumerable<IItem> ProcessLootGroup(ILootGroup lootGroup)
+        public IEnumerable<IItem> ProcessLootGroup(ILootGroup lootGroup)
         {
             var droppedLoot = new List<IItem>();
             
@@ -45,13 +45,9 @@ namespace SWG.RandomDataGenerator
             return droppedLoot.Any() ? droppedLoot : Enumerable.Empty<IItem>();
         }
 
-        private List<ILootItem> CheckLootItemsForExclusion(List<int> excludedItems, List<ILootItem> possibleLootItems)
+        public List<ILootItem> CheckLootItemsForExclusion(List<int> excludedItems, List<ILootItem> possibleLootItems)
         {
-            foreach (var lootItem in possibleLootItems.Where(lootItem => excludedItems.Contains(lootItem.Id)))
-            {
-                possibleLootItems.Remove(lootItem);
-            }
-            return possibleLootItems;
+            return possibleLootItems.Where(lootItem => !excludedItems.Contains(lootItem.Id)).ToList();
         }
     }
 }
