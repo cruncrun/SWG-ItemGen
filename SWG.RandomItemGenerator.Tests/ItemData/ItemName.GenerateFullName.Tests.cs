@@ -1,11 +1,11 @@
-﻿using SWG.RandomItemGenerator.ItemData;
-using SWG.RandomItemGenerator.ItemData.ItemAffixes;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using SWG.RandomDataGenerator.ItemData;
+using SWG.RandomDataGenerator.ItemData.ItemAffixes;
 using Xunit;
 
-namespace SWG.RandomItemGenerator.Tests
+namespace SWG.RandomDataGenerator.Tests
 {
     public class ItemNameTests
     {

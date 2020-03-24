@@ -7,14 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="EntityFramework" Version="6.2.0" />
+    <PackageReference Include="EntityFramework" Version="6.3.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.0" />
     <PackageReference Include="xunit" Version="2.4.0" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SWG.RandomItemGenerator\SWG.RandomItemGenerator.csproj" />
+    <ProjectReference Include="..\SWG.RandomItemGenerator\SWG.RandomDataGenerator.csproj" />
   </ItemGroup>
 
 </Project>

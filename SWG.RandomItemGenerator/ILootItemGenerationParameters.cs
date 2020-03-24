@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SWG.RandomItemGenerator
+namespace SWG.RandomDataGenerator
 {
-    enum ItemAttributeType
+    public interface ILootItemGenerationParameters
     {
     }
 }

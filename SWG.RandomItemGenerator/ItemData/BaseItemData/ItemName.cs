@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using SWG.RandomItemGenerator.ItemData.ItemAffixes;
+using SWG.RandomDataGenerator.ItemData.ItemAffixes;
 
-namespace SWG.RandomItemGenerator.ItemData
+namespace SWG.RandomDataGenerator.ItemData
 {
     public class ItemName
     {
@@ -22,8 +22,8 @@ namespace SWG.RandomItemGenerator.ItemData
 
         private string GenerateFullItemName(string baseItemName, Affixes affixes)
         {            
-            string separator = " ";
-            StringBuilder sb = new StringBuilder();
+            var separator = " ";
+            var sb = new StringBuilder();
 
             if (affixes.FirstPrefix != null)
             {
