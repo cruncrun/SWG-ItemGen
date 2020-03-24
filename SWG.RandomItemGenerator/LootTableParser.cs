@@ -16,7 +16,7 @@ namespace SWG.RandomDataGenerator
             var droppedLoot = new List<IItem>();
 
             var possibleLootGroups = lootTable.LootGroups
-                .Where(g => g.IsPossible && RandomGenerationHelper.RandomNumber(0, 10000) <= g.LootGroupRollProbability);
+                .Where(g => g.IsPossible && CheckForHit(g.LootGroupRollProbability));
 
             foreach (var lootGroup in possibleLootGroups)
             {
@@ -29,25 +29,36 @@ namespace SWG.RandomDataGenerator
         public IEnumerable<IItem> ProcessLootGroup(ILootGroup lootGroup)
         {
             var droppedLoot = new List<IItem>();
-            
-            droppedLoot.AddRange(_itemFactory.GetItems(lootGroup.LootItems.Where(c => c.IsGuaranteed)));
+            droppedLoot.AddRange(_itemFactory.GetItems(GetGuaranteedItems(lootGroup)));
 
-            List<ILootItem> possibleLootItems = lootGroup.LootItems.Where(g => g.IsPossible && !g.IsGuaranteed).ToList();
-            foreach (var lootItem in possibleLootItems)
+            var possibleLootItems = GetPossibleLootItems(lootGroup);
+            foreach (var lootItem in possibleLootItems.Where(lootItem => CheckForHit(lootItem.Probability)))
             {
-                if (RandomGenerationHelper.RandomNumber(0, 10000) <= lootItem.Probability)
-                {
-                    droppedLoot.Add(_itemFactory.GetItem(lootItem));
-                    possibleLootItems = CheckLootItemsForExclusion(lootItem.ItemsExcludedIfDropped, possibleLootItems);
-                }
+                droppedLoot.Add(_itemFactory.GetItem(lootItem));
+                possibleLootItems = CheckLootItemsForExclusion(lootItem.ItemsExcludedIfDropped, possibleLootItems);
             }
 
             return droppedLoot.Any() ? droppedLoot : Enumerable.Empty<IItem>();
         }
 
+        public static List<ILootItem> GetPossibleLootItems(ILootGroup lootGroup)
+        {
+            return lootGroup.LootItems.Where(g => g.IsPossible && !g.IsGuaranteed).ToList();
+        }
+
+        public static List<ILootItem> GetGuaranteedItems(ILootGroup lootGroup)
+        {
+            return lootGroup.LootItems.Where(c => c.IsGuaranteed).ToList();
+        }
+
         public List<ILootItem> CheckLootItemsForExclusion(List<int> excludedItems, List<ILootItem> possibleLootItems)
         {
             return possibleLootItems.Where(lootItem => !excludedItems.Contains(lootItem.Id)).ToList();
+        }
+
+        public bool CheckForHit(int probability)
+        {
+            return RandomGenerationHelper.RandomNumber(0, 10000) <= probability;
         }
     }
 }

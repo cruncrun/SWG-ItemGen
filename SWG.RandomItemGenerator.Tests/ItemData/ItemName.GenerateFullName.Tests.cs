@@ -2,7 +2,7 @@
 using SWG.RandomDataGenerator.ItemData.ItemAffixes;
 using Xunit;
 
-namespace SWG.RandomItemGenerator.Tests.ItemData
+namespace SWG.RandomDataGenerator.Tests.ItemData
 {
     public class ItemNameTests
     {

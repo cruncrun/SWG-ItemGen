@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using SWG.RandomDataGenerator.LootTableData;
-using SWG.RandomDataGenerator;
 using Xunit;
 
-namespace SWG.RandomItemGenerator.Tests
+namespace SWG.RandomDataGenerator.Tests.LootGeneration
 {
     public class LootTableParserTests
     {
