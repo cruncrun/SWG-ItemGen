@@ -29,10 +29,10 @@ namespace SWG.RandomDataGenerator
         private IEnumerable<IItem> ProcessLootGroup(ILootGroup lootGroup)
         {
             var droppedLoot = new List<IItem>();
-
+            
             droppedLoot.AddRange(_itemFactory.GetItems(lootGroup.LootItems.Where(c => c.IsGuaranteed)));
 
-            List<ILootItem> possibleLootItems = (List<ILootItem>) lootGroup.LootItems.Where(g => g.IsPossible && !g.IsGuaranteed);
+            List<ILootItem> possibleLootItems = lootGroup.LootItems.Where(g => g.IsPossible && !g.IsGuaranteed).ToList();
             foreach (var lootItem in possibleLootItems)
             {
                 if (RandomGenerationHelper.RandomNumber(0, 10000) <= lootItem.Probability)

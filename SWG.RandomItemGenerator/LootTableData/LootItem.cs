@@ -10,6 +10,7 @@ namespace SWG.RandomDataGenerator.LootTableData
         public bool IsUnique { get; set; }
         public bool IsGuaranteed { get; set; }
         public bool IsPossible { get; set; }
+        public bool IsPredefined { get; set; }
         public List<int> ItemsExcludedIfDropped { get; set; }
     }
 }

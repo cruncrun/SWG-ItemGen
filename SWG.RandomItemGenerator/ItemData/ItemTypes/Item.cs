@@ -6,6 +6,6 @@ namespace SWG.RandomDataGenerator.ItemData.ItemTypes
 {
     abstract class Item : IItem
     {
-        public ItemName ItemName { get; set; }
+        //public ItemName ItemName { get; set; }
     }
 }

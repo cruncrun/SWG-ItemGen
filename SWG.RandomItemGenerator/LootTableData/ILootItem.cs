@@ -12,6 +12,7 @@ namespace SWG.RandomDataGenerator.LootTableData
         bool IsUnique { get; set; } // może wystąpić tylko raz
         bool IsGuaranteed { get; set; } // gwarantowany drop
         bool IsPossible { get; set; } // możliwy drop
+        bool IsPredefined { get; set; }
         List<int> ItemsExcludedIfDropped { get; set; }
     }
 }

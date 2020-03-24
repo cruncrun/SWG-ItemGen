@@ -1,7 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
+﻿using System.Collections.Generic;
+using System.Linq;
 using SWG.RandomDataGenerator.ItemData.ItemTypes;
+using SWG.RandomDataGenerator.ItemData.ItemTypes.EquipableItems.Armors.ChestArmors;
+using SWG.RandomDataGenerator.ItemData.ItemTypes.EquipableItems.Armors.HeadArmors;
 using SWG.RandomDataGenerator.LootTableData;
 
 namespace SWG.RandomDataGenerator
@@ -10,19 +11,22 @@ namespace SWG.RandomDataGenerator
     {
         public IItem GetItem(ILootItem lootItem)
         {
-            throw new NotImplementedException();
+            return lootItem.IsPredefined ? GetPredefinedItem(lootItem) : GetRandomItem(lootItem);
         }
 
         public IEnumerable<IItem> GetItems(IEnumerable<ILootItem> lootItems)
         {
-            var droppedItems = new List<IItem>();
+            return lootItems.Select(GetItem).ToList();
+        }
 
-            foreach (var lootItem in lootItems)
-            {
-                droppedItems.Add(GetItem(lootItem));
-            }
+        private IItem GetRandomItem(ILootItem lootItem)
+        {
+            throw new System.NotImplementedException();
+        }
 
-            return droppedItems;
+        private IItem GetPredefinedItem(ILootItem lootItem)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

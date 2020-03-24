@@ -6,7 +6,7 @@ using SWG.RandomDataGenerator.LootTableData;
 
 namespace SWG.RandomDataGenerator
 {
-    static class RandomGenerationHelper
+    public static class RandomGenerationHelper
     {
         private static readonly Random Random = new Random();
         private static readonly object SyncLock = new object();
