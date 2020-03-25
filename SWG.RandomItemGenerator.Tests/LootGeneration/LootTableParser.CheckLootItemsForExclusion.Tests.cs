@@ -8,17 +8,17 @@ namespace SWG.RandomDataGenerator.Tests.LootGeneration
     public class LootTableParserTests
     {
         private readonly List<ILootItem> _possibleLootItemsBase = PopulateLootItems();
+        private readonly LootTableParser _lootTableParser = new LootTableParser();
 
         [Fact]
         public void CheckLootItemsForExclusion_ExcludeNone()
         {
             // Arrange
-            var lootTableParser = new LootTableParser();
             var expectedLootList = _possibleLootItemsBase;
 
             // Act
             var modifiedLootList =
-                lootTableParser.CheckLootItemsForExclusion(new List<int> { 3 }, _possibleLootItemsBase);
+                _lootTableParser.CheckLootItemsForExclusion(new List<int> { 3 }, _possibleLootItemsBase);
 
             // Assert
             Assert.Equal(expectedLootList, modifiedLootList);
@@ -28,12 +28,11 @@ namespace SWG.RandomDataGenerator.Tests.LootGeneration
         public void CheckLootItemsForExclusion_ExcludeSingleItem()
         {
             // Arrange
-            var lootTableParser = new LootTableParser();
             var expectedLootList = _possibleLootItemsBase.Select(c => c).Where(v => v.Id != 1).ToList();
 
             // Act
             var modifiedLootList =
-                lootTableParser.CheckLootItemsForExclusion(new List<int> { 1 }, _possibleLootItemsBase);
+                _lootTableParser.CheckLootItemsForExclusion(new List<int> { 1 }, _possibleLootItemsBase);
 
             // Assert
             Assert.Equal(expectedLootList, modifiedLootList);
@@ -42,15 +41,48 @@ namespace SWG.RandomDataGenerator.Tests.LootGeneration
         [Fact]
         public void CheckLootItemsForExclusion_ExcludeManyItems()
         {
-            var lootTableParser = new LootTableParser();
             var expectedLootList = new List<ILootItem>();
 
             // Act
             var modifiedLootList =
-                lootTableParser.CheckLootItemsForExclusion(new List<int> { 1, 2 }, _possibleLootItemsBase);
+                _lootTableParser.CheckLootItemsForExclusion(new List<int> { 1, 2 }, _possibleLootItemsBase);
 
             // Assert
             Assert.Equal(expectedLootList, modifiedLootList);
+        }
+
+        [Fact]
+        public void GetPossibleLootItems_Positive()
+        {
+            var lootGroup = new LootGroup {LootItems = _possibleLootItemsBase};
+            var expectedLootItems = lootGroup.LootItems.Where(c => c.Id == 1).ToList();
+            
+            var modifiedLootList = _lootTableParser.GetPossibleLootItems(lootGroup);
+
+            Assert.Equal(expectedLootItems, modifiedLootList);
+        }
+
+        [Fact]
+        public void GetGuaranteedLootItems_Positive()
+        {
+            var lootGroup = new LootGroup { LootItems = _possibleLootItemsBase };
+            var expectedLootItems = lootGroup.LootItems.Where(c => c.Id == 1).ToList();
+
+            var modifiedLootList = _lootTableParser.GetGuaranteedItems(lootGroup);
+
+            Assert.Equal(expectedLootItems, modifiedLootList);
+        }
+
+        [Fact]
+        public void CheckForHit_Hit()
+        {
+            Assert.True(_lootTableParser.CheckForHit(10000));
+        }
+
+        [Fact]
+        public void CheckForHit_Miss()
+        {
+            Assert.False(_lootTableParser.CheckForHit(0));
         }
 
         private static List<ILootItem> PopulateLootItems()
@@ -61,7 +93,7 @@ namespace SWG.RandomDataGenerator.Tests.LootGeneration
                 {
                     GenerationParameters = null,
                     Id = 1,
-                    IsGuaranteed = false,
+                    IsGuaranteed = true,
                     IsPredefined = false,
                     IsUnique = false,
                     ItemsExcludedIfDropped = null,
@@ -76,7 +108,7 @@ namespace SWG.RandomDataGenerator.Tests.LootGeneration
                     IsPredefined = false,
                     IsUnique = false,
                     ItemsExcludedIfDropped = null,
-                    IsPossible = true,
+                    IsPossible = false,
                     Probability = 100
                 }
             };

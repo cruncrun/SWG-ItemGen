@@ -29,10 +29,9 @@ namespace SWG.RandomDataGenerator
         public IEnumerable<IItem> ProcessLootGroup(ILootGroup lootGroup)
         {
             var droppedLoot = new List<IItem>();
-            droppedLoot.AddRange(_itemFactory.GetItems(GetGuaranteedItems(lootGroup)));
 
             var possibleLootItems = GetPossibleLootItems(lootGroup);
-            foreach (var lootItem in possibleLootItems.Where(lootItem => CheckForHit(lootItem.Probability)))
+            foreach (var lootItem in possibleLootItems.Where(lootItem => CheckForHit(lootItem.Probability) || lootItem.IsGuaranteed))
             {
                 droppedLoot.Add(_itemFactory.GetItem(lootItem));
                 possibleLootItems = CheckLootItemsForExclusion(lootItem.ItemsExcludedIfDropped, possibleLootItems);
@@ -41,12 +40,12 @@ namespace SWG.RandomDataGenerator
             return droppedLoot.Any() ? droppedLoot : Enumerable.Empty<IItem>();
         }
 
-        public static List<ILootItem> GetPossibleLootItems(ILootGroup lootGroup)
+        public List<ILootItem> GetPossibleLootItems(ILootGroup lootGroup)
         {
-            return lootGroup.LootItems.Where(g => g.IsPossible && !g.IsGuaranteed).ToList();
+            return lootGroup.LootItems.Where(g => g.IsPossible).ToList();
         }
 
-        public static List<ILootItem> GetGuaranteedItems(ILootGroup lootGroup)
+        public List<ILootItem> GetGuaranteedItems(ILootGroup lootGroup)
         {
             return lootGroup.LootItems.Where(c => c.IsGuaranteed).ToList();
         }
