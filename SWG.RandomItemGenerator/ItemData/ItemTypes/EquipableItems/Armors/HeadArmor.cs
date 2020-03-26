@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SWG.RandomDataGenerator.ItemData.ItemTypes.EquipableItems.Armors
 {
-    abstract class HeadArmor : Armor, IHeadArmor
+    public class HeadArmor : Armor, IHeadArmor
     {
     }
 }

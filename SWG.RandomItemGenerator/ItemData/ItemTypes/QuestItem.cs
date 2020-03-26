@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SWG.RandomDataGenerator.ItemData.ItemTypes
 {
-    abstract class QuestItem : Item, IQuestItem
+    public class QuestItem : Item, IQuestItem
     {
     }
 }

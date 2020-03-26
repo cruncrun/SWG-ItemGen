@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SWG.RandomDataGenerator.ItemData.ItemTypes
 {
-    abstract class Currency : Item, ICurrency
+    public class Currency : Item, ICurrency
     {
     }
 }

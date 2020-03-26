@@ -1,15 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using SWG.RandomDataGenerator.ItemData;
+﻿using SWG.RandomDataGenerator.ItemData;
 using SWG.RandomDataGenerator.ItemData.BaseItemData;
 using SWG.RandomDataGenerator.ItemData.ItemTypes;
 using SWG.RandomDataGenerator.ItemData.ItemTypes.EquipableItems;
 using SWG.RandomDataGenerator.ItemData.ItemTypes.EquipableItems.Weapons;
-using SWG.RandomDataGenerator.ItemData.ItemTypes.Currencies;
-using SWG.RandomDataGenerator.ItemData.ItemTypes.EquipableItems.Weapons.OneHandedWeapons;
-using SWG.RandomDataGenerator.ItemData.ItemTypes.EquipableItems.Weapons.RangedWeapons;
-using SWG.RandomDataGenerator.ItemData.ItemTypes.QuestItems;
 
 namespace SWG.RandomDataGenerator
 {

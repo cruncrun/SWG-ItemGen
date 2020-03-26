@@ -2,7 +2,7 @@
 
 namespace SWG.RandomDataGenerator.ItemData.ItemTypes.EquipableItems
 {
-    abstract class Armor : EquipableItem, IArmor
+    public abstract class Armor : IArmor
     {
     }
 }

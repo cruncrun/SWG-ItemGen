@@ -5,7 +5,7 @@ using SWG.RandomDataGenerator.ItemData.ItemTypes.EquipableItems;
 
 namespace SWG.RandomDataGenerator.ItemData.ItemTypes.EquipableItems.Weapons
 {
-    class RangedWeapon : Weapon, IRangedWeapon
+    public class RangedWeapon : Weapon, IRangedWeapon
     {
     }
 }
