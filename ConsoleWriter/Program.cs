@@ -6,6 +6,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using SWG.RandomDataGenerator;
+using SWG.RandomDataGenerator.ItemData.ItemTypes;
 using SWG.RandomDataGenerator.LootTableData;
 
 namespace ConsoleWriter
@@ -16,10 +17,26 @@ namespace ConsoleWriter
         {
             var lootTableGenerator = new LootTableGenerator();
             var calculator = new LootChanceCalculator();
+            var reflections = new Reflections();
 
-            calculator.Calculate(lootTableGenerator.GetLootTable());
+            var possibleItemList = new List<ItemType> {ItemType.OneHand, ItemType.TwoHand};
+
+            var testClass = reflections.GetNewInstance(possibleItemList);
+            foreach (var c in testClass)
+            {
+                Console.WriteLine(c.Name);
+            }
+            
+
+            //calculator.Calculate(lootTableGenerator.GetLootTable());
             Console.ReadKey();
         }
+    }
+
+    enum ItemType
+    {
+        OneHand,
+        TwoHand
     }
 
     class LootTableGenerator

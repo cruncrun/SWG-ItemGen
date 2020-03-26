@@ -1,6 +1,6 @@
 ﻿namespace SWG.RandomDataGenerator.ItemData.ItemTypes.EquipableItems
 {
-    internal interface IJewellery : IEquipableItem
+    internal interface IJewelery : IEquipableItem
     {
     }
 }

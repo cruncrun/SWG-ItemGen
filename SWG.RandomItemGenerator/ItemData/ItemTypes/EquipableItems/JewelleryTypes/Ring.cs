@@ -1,6 +1,6 @@
 ﻿namespace SWG.RandomDataGenerator.ItemData.ItemTypes.EquipableItems.JewelleryTypes
 {
-    abstract class Ring : Jewellery, IRing
+    abstract class Ring : Jewelery, IRing
     {
     }
 }

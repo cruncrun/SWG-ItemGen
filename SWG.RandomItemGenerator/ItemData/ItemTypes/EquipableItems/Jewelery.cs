@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SWG.RandomDataGenerator.ItemData.ItemTypes.EquipableItems
 {
-    abstract class Jewellery : EquipableItem, IJewellery
+    abstract class Jewelery : EquipableItem, IJewelery
     {
     }
 }

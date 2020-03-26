@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using SWG.RandomDataGenerator.ItemData.ItemTypes;
+using SWG.RandomDataGenerator.ItemData.ItemTypes.EquipableItems;
 using SWG.RandomDataGenerator.ItemData.ItemTypes.EquipableItems.Armors.ChestArmors;
 using SWG.RandomDataGenerator.ItemData.ItemTypes.EquipableItems.Armors.HeadArmors;
 using SWG.RandomDataGenerator.LootTableData;
@@ -21,6 +22,9 @@ namespace SWG.RandomDataGenerator
 
         private IItem GetRandomItem(ILootItem lootItem)
         {
+            var gen = new RandomItemGenerator();
+
+
             throw new System.NotImplementedException();
         }
 
