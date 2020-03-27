@@ -1,7 +1,5 @@
-﻿using System;
+﻿using SWG.RandomDataGenerator.LootTableData;
 using System.Collections.Generic;
-using System.Text;
-using SWG.RandomDataGenerator.LootTableData;
 
 namespace SWG.RandomDataGenerator.ItemData.ItemTypes
 {
@@ -14,16 +12,5 @@ namespace SWG.RandomDataGenerator.ItemData.ItemTypes
 
             return itemTypeList;
         }
-    }
-
-    enum ItemType
-    {
-        Currency,
-        QuestItem,
-        EquipableItem,
-        CraftingComponent,
-        Weapon,
-        Armor,
-        Jewelery
     }
 }

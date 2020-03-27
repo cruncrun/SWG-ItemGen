@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlTypes;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
-using SWG.RandomDataGenerator;
-using SWG.RandomDataGenerator.ItemData.ItemTypes;
+﻿using SWG.RandomDataGenerator;
 using SWG.RandomDataGenerator.LootTableData;
+using System;
+using System.Collections.Generic;
 
 namespace ConsoleWriter
 {
@@ -19,14 +13,14 @@ namespace ConsoleWriter
             var calculator = new LootChanceCalculator();
             var reflections = new Reflections();
 
-            var possibleItemList = new List<ItemType> {ItemType.OneHand, ItemType.TwoHand};
+            var possibleItemList = new List<ItemType> { ItemType.OneHand, ItemType.TwoHand };
 
             var testClass = reflections.GetNewInstance(possibleItemList);
             foreach (var c in testClass)
             {
                 Console.WriteLine(c.Name);
             }
-            
+
 
             //calculator.Calculate(lootTableGenerator.GetLootTable());
             Console.ReadKey();
@@ -57,11 +51,11 @@ namespace ConsoleWriter
             for (int i = 0; i < RandomGenerationHelper.RandomNumber(1, 5); i++)
             {
                 lootGroups.Add(new LootGroup
-                    {
-                        IsPossible = true,
-                        LootGroupRollProbability = RandomGenerationHelper.RandomNumber(1, 100),
-                        LootItems = GetLootItems()
-                    }
+                {
+                    IsPossible = true,
+                    LootGroupRollProbability = RandomGenerationHelper.RandomNumber(1, 100),
+                    LootItems = GetLootItems()
+                }
                 );
             }
 

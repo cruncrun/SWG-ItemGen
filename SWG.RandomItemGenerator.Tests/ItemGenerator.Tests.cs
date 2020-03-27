@@ -7,7 +7,7 @@ namespace SWG.RandomDataGenerator.Tests
         [Fact]
         public void ItemGenerator_GetItem_Positive()
         {
-            
+
         }
     }
 }

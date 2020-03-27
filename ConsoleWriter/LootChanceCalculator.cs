@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SWG.RandomDataGenerator.LootTableData;
+﻿using SWG.RandomDataGenerator.LootTableData;
+using System;
 
 namespace ConsoleWriter
 {

@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using SWG.RandomDataGenerator.LootTableData;
+using System.Collections.Generic;
 using System.Linq;
-using SWG.RandomDataGenerator.LootTableData;
 using Xunit;
 
 namespace SWG.RandomDataGenerator.Tests.LootGeneration
@@ -54,9 +54,9 @@ namespace SWG.RandomDataGenerator.Tests.LootGeneration
         [Fact]
         public void GetPossibleLootItems_Positive()
         {
-            var lootGroup = new LootGroup {LootItems = _possibleLootItemsBase};
+            var lootGroup = new LootGroup { LootItems = _possibleLootItemsBase };
             var expectedLootItems = lootGroup.LootItems.Where(c => c.Id == 1).ToList();
-            
+
             var modifiedLootList = _lootTableParser.GetPossibleLootItems(lootGroup);
 
             Assert.Equal(expectedLootItems, modifiedLootList);

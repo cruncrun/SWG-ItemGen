@@ -1,8 +1,7 @@
-﻿using System;
+﻿using SWG.RandomDataGenerator.LootTableData;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using SWG.RandomDataGenerator.LootTableData;
 
 namespace SWG.RandomDataGenerator
 {
@@ -13,7 +12,7 @@ namespace SWG.RandomDataGenerator
         public static int RandomNumber(int min, int max)
         {
             lock (SyncLock)
-            { 
+            {
                 return Random.Next(min, max);
             }
         }

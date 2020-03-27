@@ -9,7 +9,7 @@ namespace SWG.RandomDataGenerator
     public class Item
     {
         public BaseItemData BaseItemData { get; set; }
-        public ItemName ItemName { get; set; } 
+        public ItemName ItemName { get; set; }
         public IItem DowolnyItem { get; set; }
         public IEquipableItem DowolnyEkwipunek { get; set; }
         public ICurrency DowolnaWaluta { get; set; }
@@ -25,5 +25,5 @@ namespace SWG.RandomDataGenerator
         }
     }
 
-    
+
 }
