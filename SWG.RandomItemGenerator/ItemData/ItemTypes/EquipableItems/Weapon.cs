@@ -2,6 +2,6 @@
 {
     public abstract class Weapon : IWeapon
     {
-        public int SlotsTaken { get; set; }
+        
     }
 }

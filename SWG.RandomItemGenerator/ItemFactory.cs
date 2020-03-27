@@ -19,11 +19,15 @@ namespace SWG.RandomDataGenerator
 
         private IItem GetRandomItem(ILootItem lootItem)
         {
+            
             var gen = new RandomItemGenerator();
 
+            return gen.GenerateRandomItem(lootItem);
 
             throw new System.NotImplementedException();
         }
+
+        
 
         private IItem GetPredefinedItem(ILootItem lootItem)
         {

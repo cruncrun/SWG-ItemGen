@@ -2,6 +2,6 @@
 {
     public interface IWeapon : IEquipableItem
     {
-        int SlotsTaken { get; set; }
+
     }
 }
