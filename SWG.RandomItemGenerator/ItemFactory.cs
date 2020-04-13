@@ -23,8 +23,6 @@ namespace SWG.RandomDataGenerator
             var gen = new RandomItemGenerator();
 
             return gen.GenerateRandomItem(lootItem);
-
-            throw new System.NotImplementedException();
         }
 
         

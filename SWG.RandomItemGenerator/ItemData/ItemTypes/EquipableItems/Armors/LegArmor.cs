@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SWG.RandomDataGenerator.ItemData.ItemTypes.EquipableItems.Armors
 {
-    class LegArmor : ILegArmor
+    class LegArmor : Armor, ILegArmor
     {
     }
 }

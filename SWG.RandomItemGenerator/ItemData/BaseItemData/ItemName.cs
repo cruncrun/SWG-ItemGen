@@ -13,6 +13,12 @@ namespace SWG.RandomDataGenerator.ItemData
         {
 
         }
+
+        public ItemName(Affixes affixes)
+        {
+            FullItemName = GenerateFullItemName(BaseItemName, affixes);
+        }
+
         public ItemName(string baseItemName, Affixes affixes)
         {
             FullItemName = GenerateFullItemName(baseItemName, affixes);

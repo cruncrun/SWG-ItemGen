@@ -3,5 +3,6 @@
     interface IAffix
     {
         string AffixName { get; set; }
+        AffixRarity AffixRarity { get; set; }
     }
 }

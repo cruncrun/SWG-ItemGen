@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="ItemFactory\" />
+    <Folder Include="ItemData\ItemAttributes\" />
   </ItemGroup>
 
 </Project>

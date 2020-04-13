@@ -14,6 +14,12 @@ namespace SWG.RandomDataGenerator
         {
             var item = GetItemObject(GetItemType(lootItem.GenerationParameters.PossibleItemSlotTypes));
 
+            return GetRandomItem(item, lootItem.GenerationParameters);
+        }
+
+        private IEquipableItem GetRandomItem(IEquipableItem item, ILootItemGenerationParameters lootItemGenerationParameters)
+        {
+
             return item;
         }
 
